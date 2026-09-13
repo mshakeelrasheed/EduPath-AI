@@ -943,3 +943,10 @@ See the [LICENSE](LICENSE) file for details.
 **Analyze your journey. Track your progress. Build your future.**
 
 </p>
+**Built with Python • Streamlit • Google Gemini • ChromaDB • ReportLab**
+
+<br>
+
+⭐ **If you find EduPath AI helpful, consider starring the repository.**
+
+</div>
