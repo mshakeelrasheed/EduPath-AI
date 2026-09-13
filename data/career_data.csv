@@ -1,0 +1,10 @@
+field,career_name,demand_level,transferable_skills,core_focus
+Computer Science,AI/ML Engineer,High,"Python, Linear Algebra, Probability, System Design","Deep learning, pipeline orchestration, model inference"
+Computer Science,Cloud Solutions Architect,High,"Distributed Systems, Networking, Linux, Security","Cloud infrastructure, AWS/GCP, Terraform, Kubernetes"
+Business,Financial Analyst,Moderate,"Financial Modeling, Excel, Statistics, Accounting","Valuation, forecasting, risk management, capital budgeting"
+Business,Product Manager,High,"Market Research, Agile, Communication, Prototyping","Roadmapping, product analytics, stakeholder alignment"
+Engineering,Embedded Systems Engineer,Moderate,"C/C++, Microcontrollers, Circuit Design, RTOS","Firmware development, sensor integration, IoT architecture"
+Engineering,Robotics Engineer,High,"ROS, Kinematics, Control Systems, Python","Automation, path planning, motor actuation, SLAM"
+Biology,Bioinformatics Scientist,High,"Python, Genomics, Biostatistics, R","Sequence analysis, computational biology, drug discovery"
+Finance,Quantitative Analyst,High,"Stochastic Calculus, C++, Python, Time Series","Algorithmic trading, quantitative pricing, risk engines"
+Social Sciences,Policy Research Analyst,Moderate,"Qualitative Analysis, SPSS/R, Policy Writing","Impact evaluation, survey design, public governance"

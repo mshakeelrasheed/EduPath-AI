@@ -1,0 +1,10 @@
+.streamlit/secrets.toml
+__pycache__/
+*.py[cod]
+.chroma_db/
+chroma_storage/
+data/students/*.json
+!data/students/sample_student.json
+data/credentials.json
+.DS_Store
+*.pdf
