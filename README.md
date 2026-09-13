@@ -1,532 +1,578 @@
-<div align="center">
-
 # 🎓 EduPath AI
 
 ### Privacy-First Academic Companion & Longitudinal Career Navigator
 
-**Transforming raw academic transcripts and university syllabi into grounded four-year roadmaps and verifiable career readiness.**
+> **EduPath AI** transforms raw academic transcripts and university syllabi into grounded four-year academic roadmaps, personalized career guidance, measurable readiness insights, and verifiable progress reports.
 
-<p>
+<p align="center">
 
-[![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python)](https://www.python.org/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-Web_App-ff4b4b?style=for-the-badge&logo=streamlit)](https://streamlit.io/)
-[![Google Gemini](https://img.shields.io/badge/Google_Gemini-API-orange?style=for-the-badge&logo=google)](https://ai.google.dev/)
-[![ChromaDB](https://img.shields.io/badge/ChromaDB-Vector_RAG-blueviolet?style=for-the-badge)](https://www.trychroma.com/)
-[![ReportLab](https://img.shields.io/badge/ReportLab-PDF_Audits-red?style=for-the-badge)](https://www.reportlab.com/)
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-App-red?logo=streamlit)](https://streamlit.io/)
+[![Google Gemini](https://img.shields.io/badge/AI-Google%20Gemini-4285F4?logo=google)](https://ai.google.dev/)
+[![ChromaDB](https://img.shields.io/badge/RAG-ChromaDB-orange)](https://www.trychroma.com/)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 </p>
 
-### 🚀 Live Demo
-
-**[Launch EduPath AI](https://edupath-ai-companion.streamlit.app/)**
-
-</div>
+<p align="center">
+  <a href="https://edupath-ai-companion.streamlit.app/">
+    <strong>🚀 Live Demo</strong>
+  </a>
+</p>
 
 ---
 
-# 📌 Overview
+## 📌 Overview
 
-**EduPath AI** is an intelligent, privacy-focused academic and career companion designed to bridge the gap between university coursework, degree requirements, skill development, and real-world career readiness.
+Students often have access to grades, course outlines, and career resources, but these pieces of information are rarely connected into one continuous academic and career journey.
 
-Instead of relying on generic career advice, EduPath AI analyzes verified student academic data, uses **Retrieval-Augmented Generation (RAG)** over official institutional handbooks, and tracks longitudinal progress against an immutable day-one baseline.
+**EduPath AI** addresses this gap by combining:
 
-The platform addresses a practical question:
-
-> **How can a student navigate their institutional curriculum without hallucinated information, remediate weak subjects, and continuously measure career readiness while maintaining strict data privacy?**
-
-EduPath AI combines:
-
-- 📄 Automatic transcript and coursework parsing
-- 📑 Course catalog ingestion using ChromaDB-based RAG
-- 📊 Balanced 100-point career readiness scoring
-- 💡 Targeted academic remediation
-- 🗺️ Adaptive four-year academic and career roadmapping
-- 💬 Grade-aware AI advisory companion
-- 🎯 Verified opportunity tracking
-- 🏆 Rule-based milestone and achievement progression
+- 📄 Academic transcript analysis
+- 📚 University syllabus and catalog grounding
+- 🧠 Retrieval-Augmented Generation (RAG)
+- 📊 Academic and career readiness scoring
+- 🛠️ Personalized skill remediation
+- 🗺️ Adaptive four-year roadmaps
+- 🤖 Grade-aware AI advising
+- 🎯 Verified career opportunities
 - 📈 Longitudinal progress tracking
-- 📄 Automated PDF progress audits and portfolio generation
+- 🏆 Achievement and milestone tracking
+- 📑 Downloadable PDF progress audits and portfolios
+
+Instead of providing generic AI advice, EduPath AI maintains a student's academic context and continuously updates recommendations as the student progresses.
 
 ---
 
-# 🎯 Problem Statement
+## 🎯 Problem Statement
 
-Higher education advising is often fragmented, reactive, and disconnected from changing industry requirements.
+University students commonly face several connected problems:
 
-### Major Problems
+### 1. Syllabus Disconnect
 
-#### 📚 Syllabus Disconnect
+Students know which courses they are taking, but often do not know how individual courses map to:
 
-University handbooks, course prerequisites, degree requirements, and course descriptions are often buried inside large static PDFs that students rarely consult.
-
-#### 🤖 Generic AI Hallucinations
-
-General-purpose AI systems can generate incorrect university requirements, fabricated course codes, inaccurate prerequisites, or outdated application information.
-
-#### 📉 Lack of Longitudinal Tracking
-
-Students often lack a quantitative way to understand how their:
-
-- Academic performance
-- Technical skills
+- Required technical skills
 - Projects
-- Internships
-- Achievements
+- Career roles
+- Industry expectations
+- Future learning goals
 
-compound over time toward their desired career.
+### 2. Generic AI Advice
 
-#### 🔐 Privacy & Security Risks
+Traditional AI assistants can provide useful suggestions, but without grounding them in the student's actual academic record, advice can become generic or inaccurate.
 
-Academic transcripts contain sensitive student information. Uploading these records to uncontrolled platforms can create unnecessary privacy and data-leakage risks.
+### 3. No Longitudinal Tracking
+
+Most academic tools focus on the current semester.
+
+Students need a system that can answer:
+
+> **"How am I progressing compared with where I started?"**
+
+### 4. Scattered Achievements
+
+Projects, certifications, internships, competitions, leadership activities, and other achievements are often stored separately and are difficult to connect to career readiness.
+
+### 5. Privacy Concerns
+
+Academic transcripts and student profiles contain sensitive personal information. A student-focused system should minimize unnecessary exposure and isolate individual profiles.
 
 ---
 
-# 💡 Our Solution
+# 💡 Solution
 
-EduPath AI combines document parsing, local vector retrieval, structured analytics, and Large Language Model reasoning into a unified academic and career intelligence platform.
-
-```text
-        Academic Transcript                University Catalog
-                │                                │
-                ▼                                ▼
-       Text Extraction Layer            ChromaDB Vector Store
-                │                                │
-                ▼                                ▼
-      Coursework Analytics Engine          Semantic RAG
-                │                                │
-                └──────────────┬─────────────────┘
-                               │
-                               ▼
-                 ┌──────────────────────────┐
-                 │     Readiness Engine     │
-                 │      100-Point Audit     │
-                 └────────────┬─────────────┘
-                              │
-                 ┌────────────┴────────────┐
-                 ▼                         ▼
-        Dynamic 4-Year Roadmap       Grade-Aware AI
-                                   Advisor Companion
-                 │                         │
-                 └────────────┬────────────┘
-                              │
-                              ▼
-                 Longitudinal Progress Tracking
-                              │
-                              ▼
-                 PDF Progress Audit & Portfolio
-```
-
-The system evaluates student development across four balanced pillars:
+EduPath AI creates a continuous student-development cycle:
 
 ```text
-Academic Standing
-       +
-Skills Matrix
-       +
-Practical Projects
-       +
-Experience / Internships
-       =
-Career Readiness
+Academic Data
+     ↓
+Transcript & Syllabus Analysis
+     ↓
+Grounded Knowledge Retrieval
+     ↓
+Readiness Assessment
+     ↓
+Skill Gap Detection
+     ↓
+Personalized Recommendations
+     ↓
+Four-Year Roadmap
+     ↓
+Progress & Achievement Tracking
+     ↓
+Updated Readiness Assessment
+     ↓
+Progress Report / Portfolio
 ```
 
-This shifts academic guidance from:
+The key idea is simple:
 
-> **"What electives should I take?"**
-
-to:
-
-> **"Based on your academic performance, prerequisite courses, institutional handbook, skills, and target career, which milestones should you complete next to improve your readiness?"**
+> **Analyze → Recommend → Act → Track → Reassess → Improve**
 
 ---
 
 # ✨ Key Features
 
-## 📄 1. Transcript Analytics & Grading Breakdown
+## 📄 1. Academic Transcript Analysis
 
-EduPath AI processes semester result documents and extracts:
+EduPath AI extracts academic information from student transcripts and converts it into structured data.
 
-- Course titles
-- Numerical marks
-- Letter grades
-- Semester performance
+The system can analyze:
 
-The system automatically categorizes academic performance into:
+- Courses
+- Grades
+- Credit hours
+- Academic performance
+- Completed coursework
+- Areas requiring improvement
 
-- 🟢 Strong
-- 🟡 Average
-- 🔴 Weak
-
-Weak areas are highlighted to help students identify academic blind spots before they affect downstream courses.
+This creates the academic foundation for the rest of the system.
 
 ---
 
-## 💡 2. Targeted Academic Remediation
+## 📚 2. University Syllabus Grounding
 
-For weak subjects, EduPath AI generates targeted recovery strategies.
+University course information can be stored and indexed using **ChromaDB**.
 
-The system can provide:
+This enables the AI advisor to retrieve relevant academic context instead of relying only on general model knowledge.
 
-- Weekly revision plans
-- Conceptual learning targets
-- Practice recommendations
-- Subject-specific improvement strategies
-- Career-aligned learning priorities
+### RAG Pipeline
 
-The goal is not simply to identify a weak grade, but to convert it into an actionable improvement plan.
-
----
-
-## 📑 3. Grounded Catalog Knowledge Base — RAG
-
-Official university handbooks, degree catalogs, and course syllabi can be processed into a **ChromaDB vector store**.
-
-The RAG system enables:
-
-- Semantic course searching
-- Degree requirement retrieval
-- Prerequisite discovery
-- Course relationship analysis
-- Curriculum-grounded recommendations
-
-### 🛡️ Anti-Hallucination Guardrail
-
-If a course rule, prerequisite, or requirement is not present in the uploaded institutional catalog, EduPath AI explicitly states that the information could not be verified.
-
-This prevents the AI from inventing university-specific requirements.
+```text
+University Catalog / Syllabus
+            ↓
+      Document Processing
+            ↓
+        Chunking
+            ↓
+       ChromaDB Index
+            ↓
+    Semantic Retrieval
+            ↓
+       Gemini AI
+            ↓
+ Grounded Recommendation
+```
 
 ---
 
-## 📊 4. Quantitative 100-Point Career Readiness Engine
+## 📊 3. 100-Point Career Readiness Score
 
-EduPath AI calculates career readiness using four major dimensions.
+EduPath AI evaluates student readiness using four major pillars:
+
+| Pillar | Weight |
+|---|---:|
+| 🎓 Academic | 30% |
+| 🧠 Skills | 25% |
+| 🛠️ Projects | 25% |
+| 💼 Experience | 20% |
+| **Total** | **100%** |
 
 ### Readiness Formula
 
 ```text
 Readiness Score =
-    (Academic Metric    × 0.30)
-  + (Skills Matrix      × 0.25)
-  + (Project Portfolio  × 0.25)
-  + (Field Experience   × 0.20)
+    Academic × 0.30
+  + Skills × 0.25
+  + Projects × 0.25
+  + Experience × 0.20
 ```
 
-### Scoring Breakdown
-
-| Dimension | Weight |
-|---|---:|
-| 🎓 Academic Foundation | 30% |
-| 🛠️ Technical & Professional Skills | 25% |
-| 🚀 Portfolio & Projects | 25% |
-| 💼 Experience / Internships | 20% |
-| **Total** | **100%** |
-
-### Academic Foundation
-
-Measures:
-
-- Coursework performance
-- GPA
-- Grade consistency
-- Academic progression
-
-### Technical & Professional Skills
-
-Measures:
-
-- Technical competencies
-- Programming skills
-- Tools
-- Professional capabilities
-- Validated skill development
-
-### Portfolio & Projects
-
-Measures:
-
-- Completed projects
-- GitHub repositories
-- Production deployments
-- Practical implementations
-
-### Field Experience
-
-Measures:
-
-- Internships
-- Fellowships
-- Research experience
-- Relevant professional exposure
+The score is designed to provide a high-level snapshot of career preparation rather than functioning as a formal academic evaluation.
 
 ---
 
-# 📈 Longitudinal Progress Tracking
+# 🛠️ 4. Skill Gap & Remediation Engine
 
-EduPath AI maintains a **day-one baseline** and compares future progress against it.
+After analyzing academic and career readiness data, EduPath AI identifies areas where the student may need additional development.
+
+Examples include:
+
+- Programming
+- Data Structures & Algorithms
+- Machine Learning
+- Deep Learning
+- Databases
+- Cloud
+- Communication
+- Project experience
+- Industry exposure
+
+The system can then recommend targeted learning or practical activities.
+
+### Example
 
 ```text
-                    Day-One Baseline
-                           │
-                           ▼
-                  Initial Readiness
-                           │
-                           ▼
-        ┌─────────────────────────────────┐
-        │       Student Progress          │
-        │                                 │
-        │  Academic → Skills → Projects  │
-        │  → Experience → Achievements   │
-        └────────────────┬────────────────┘
-                         │
-                         ▼
-                  Updated Readiness
-                         │
-                         ▼
-                  Progress Delta
+Current State
+     ↓
+Missing Skill: Machine Learning Deployment
+     ↓
+Recommended Learning
+     ↓
+Build a Deployment Project
+     ↓
+Add Achievement
+     ↓
+Recalculate Readiness
 ```
 
-Students can continue updating their information over time, allowing the system to show how their career readiness changes across semesters.
-
-The tracker can represent progress through:
-
-- Not Started
-- In Progress
-- Completed
-
 ---
 
-# 🏆 Achievements & Milestone Tracking
+# 🗺️ 5. Adaptive Four-Year Roadmap
 
-EduPath AI includes rule-based milestone detection to recognize meaningful student progress.
+EduPath AI generates a personalized roadmap based on the student's:
 
-Achievements can be associated with:
-
-- Academic milestones
-- Completed roadmap milestones
-- Technical skill development
+- Current semester
+- Academic performance
+- Existing skills
+- Skill gaps
 - Projects
-- Internships
-- Research
-- Competitions
-- Other verified accomplishments
+- Career interests
+- Experience
+- Achievements
 
-The achievement layer transforms individual accomplishments into a visible career-development history.
-
----
-
-# 🗺️ 5. Dynamic 4-Year Adaptive Roadmap
-
-EduPath AI generates a field-specific roadmap covering:
+The roadmap is designed to evolve rather than remain a static four-year plan.
 
 ```text
 Year 1
-  ↓
-Foundation & Academic Development
-  ↓
+├── Academic Foundation
+├── Programming
+└── Basic Projects
+
 Year 2
-  ↓
-Skill Building & Practical Projects
-  ↓
+├── Core AI / CS Skills
+├── Intermediate Projects
+└── Technical Certifications
+
 Year 3
-  ↓
-Specialization & Experience
-  ↓
+├── Specialization
+├── Advanced Projects
+├── Research / Internship
+└── Portfolio Development
+
 Year 4
-  ↓
-Career Preparation & Industry Readiness
+├── Capstone Project
+├── Industry Preparation
+├── Resume / Portfolio
+└── Job / Graduate Study Preparation
 ```
 
-Roadmap milestones can be tracked using:
+---
 
-- ⚪ Not Started
-- 🟡 In Progress
-- 🟢 Completed
+# 🤖 6. Grade-Aware AI Advisor
 
-Completing roadmap milestones contributes to the student's overall progress ledger and readiness evaluation.
+The AI advisor uses the student's academic context to make recommendations.
+
+Instead of asking:
+
+> "What should an AI student learn?"
+
+a student can receive guidance based on their actual academic progress.
+
+Examples:
+
+- Which skill should I learn next?
+- Which project fits my current level?
+- What should I improve before applying for internships?
+- Which courses are related to my target career?
+- What should I focus on this semester?
 
 ---
 
-# 💬 6. Grade-Aware AI Advisory Companion
+# 🎯 7. Verified Opportunities
 
-EduPath AI provides a conversational AI advisor that understands the student's academic context.
+EduPath AI can surface relevant opportunities such as:
 
-The assistant can use:
-
-- Student coursework
-- Grades
-- Declared interests
-- Career goals
-- RAG-retrieved catalog information
-- Current progress
-- Skills
+- Internships
 - Projects
+- Certifications
+- Competitions
+- Career opportunities
+- Learning opportunities
 
-This enables more personalized recommendations than a generic AI chatbot.
-
-### AI Infrastructure
-
-The advisor is powered by **Google Gemini** with:
-
-- Dynamic model fallback
-- Retry handling
-- Exponential backoff
-- Context-aware prompting
+The objective is to connect readiness gaps with practical opportunities.
 
 ---
 
-# 🎯 7. Verified Opportunities Ledger
+# 📈 8. Longitudinal Progress Tracking
 
-EduPath AI provides a centralized opportunity layer for students.
+A major part of EduPath AI is tracking how a student's profile changes over time.
 
-Supported opportunity categories include:
+The system supports a continuous cycle:
 
+```text
+Initial Analysis
+      ↓
+Baseline Readiness
+      ↓
+Student Takes Action
+      ↓
+Student Updates Progress
+      ↓
+System Recalculates
+      ↓
+New Readiness Score
+      ↓
+Progress Comparison
+```
+
+Students can manually update their progress by adding:
+
+- New skills
+- Completed projects
+- Certifications
+- Internships
+- Competitions
+- Experience
+- Other academic/career milestones
+
+The system can then compare the updated state against earlier progress.
+
+### Example
+
+```text
+Initial Readiness      → 58/100
+       ↓
+Completed ML Project
+       ↓
+Earned Certification
+       ↓
+Added Internship
+       ↓
+Updated Readiness      → 74/100
+```
+
+This makes the platform longitudinal rather than just a one-time academic analyzer.
+
+---
+
+# 🏆 9. Achievements & Milestone Tracking
+
+Students can maintain a structured record of meaningful achievements.
+
+Examples:
+
+- 🥇 Competition wins
+- 📜 Certifications
+- 💻 Projects
+- 🧪 Research
 - 💼 Internships
-- 🏆 Hackathons
-- 🔬 Research opportunities
-- 🎓 Fellowships
-- 🌎 Global competitions
+- 🎤 Presentations
+- 🏅 Awards
+- 👥 Leadership activities
+- 📚 Completed learning milestones
 
-Opportunity sources can include platforms such as:
+Achievements can become part of the student's overall career-readiness picture.
 
-- Devpost
-- Lablab.ai
-- Other verified opportunity sources
+### Achievement Flow
 
-Opportunities can be filtered according to the student's academic discipline and career direction.
+```text
+Student Adds Achievement
+          ↓
+Achievement Stored
+          ↓
+Profile Updated
+          ↓
+Relevant Readiness Area Updated
+          ↓
+Progress Report Updated
+```
 
 ---
 
-# 📄 8. Automated PDF Audit & Portfolio Generation
+# 📑 10. Downloadable Progress Audit & Portfolio
 
-EduPath AI can generate publication-grade PDF documents using **ReportLab**.
+EduPath AI can generate a PDF containing a structured snapshot of the student's development.
 
-## 📊 Career Progress Audit
-
-The progress audit can contain:
-
-- Overall readiness score
-- Category scores
-- Historical progress
-- Baseline comparison
-- Progress deltas
-- Strategic recommendations
-- Career readiness analysis
-
-## 📁 Student Career Portfolio
-
-The portfolio provides a professional summary containing:
+A progress report can include:
 
 - Student profile
-- Career goals
-- Technical skills
-- Completed projects
-- Verified achievements
-- Relevant experience
-- Career development progress
+- Academic summary
+- Readiness score
+- Readiness breakdown
+- Skills
+- Skill gaps
+- Projects
+- Achievements
+- Experience
+- Roadmap
+- Progress observations
+- Career recommendations
+
+This can function as a personal academic/career audit and a structured portfolio artifact.
 
 ---
 
-# 🧠 Scoring & Readiness Architecture
-
-The scoring system follows a weighted, normalized multi-variable model.
+# 🧠 System Architecture
 
 ```text
-                    Student Records
-                          │
-                          ▼
-                Multi-Pillar Scoring
-                          │
-        ┌─────────────────┼─────────────────┐
-        ▼                 ▼                 ▼                 ▼
-    Academic           Skills            Projects         Experience
-      30%               25%                25%               20%
-        │                 │                  │                 │
-        └─────────────────┴──────────────────┴─────────────────┘
-                          │
-                          ▼
-                Composite Readiness Score
-                          │
-                          ▼
-                 Baseline Comparison
-                          │
-                 ┌────────┴────────┐
-                 ▼                 ▼
-          Action Directives    PDF Progress Audit
+┌───────────────────────────────────────────┐
+│              Student Input                │
+│ Transcript + Profile + Syllabus + Updates │
+└─────────────────────┬─────────────────────┘
+                      ↓
+┌───────────────────────────────────────────┐
+│          Document & Data Processing        │
+│ PDF Extraction + Pandas + Validation       │
+└─────────────────────┬─────────────────────┘
+                      ↓
+┌───────────────────────────────────────────┐
+│              Knowledge Layer               │
+│         ChromaDB + Semantic RAG             │
+└─────────────────────┬─────────────────────┘
+                      ↓
+┌───────────────────────────────────────────┐
+│              Analysis Layer                │
+│ Academic + Skills + Projects + Experience │
+└─────────────────────┬─────────────────────┘
+                      ↓
+┌───────────────────────────────────────────┐
+│            Readiness Engine                │
+│              100-Point Score               │
+└─────────────────────┬─────────────────────┘
+                      ↓
+┌───────────────────────────────────────────┐
+│            Recommendation Layer            │
+│ Gaps + Remediation + Roadmap + AI Advisor │
+└─────────────────────┬─────────────────────┘
+                      ↓
+┌───────────────────────────────────────────┐
+│         Longitudinal Tracking Layer        │
+│ Progress + Achievements + Milestones       │
+└─────────────────────┬─────────────────────┘
+                      ↓
+┌───────────────────────────────────────────┐
+│              Output Layer                 │
+│ Dashboard + Opportunities + PDF Reports   │
+└───────────────────────────────────────────┘
 ```
 
 ---
 
-# 🔐 Privacy & Security Framework
+# 🔄 Continuous Student Progress Cycle
 
-EduPath AI follows a privacy-first architecture.
-
-## 🔑 Isolated Account Gate
-
-The platform uses a secure authentication layer instead of open profile selectors.
-
-## 🔒 Cryptographic Hashing
-
-Passcodes are hashed using **SHA-256** before being written to disk.
-
-Plaintext passwords are not stored.
-
-## 🗂️ Strict Data Segregation
-
-Each student profile is stored separately:
+EduPath AI is designed around repeated evaluation rather than a one-time analysis.
 
 ```text
-data/students/<sanitized_id>.json
-```
-
-This structure helps prevent cross-user data leakage.
-
-## 🚫 Git Tracking Protection
-
-Sensitive files are excluded from version control through `.gitignore`, including:
-
-```text
-credentials
-student profiles
-vector database files
-cache files
-local secrets
-API keys
+┌──────────────────────┐
+│ 1. Student Onboards  │
+└──────────┬───────────┘
+           ↓
+┌──────────────────────┐
+│ 2. Initial Analysis  │
+└──────────┬───────────┘
+           ↓
+┌──────────────────────┐
+│ 3. Readiness Score   │
+└──────────┬───────────┘
+           ↓
+┌──────────────────────┐
+│ 4. Recommendations   │
+└──────────┬───────────┘
+           ↓
+┌──────────────────────┐
+│ 5. Student Progress  │
+│    & Achievements    │
+└──────────┬───────────┘
+           ↓
+┌──────────────────────┐
+│ 6. Reassessment      │
+└──────────┬───────────┘
+           ↓
+┌──────────────────────┐
+│ 7. Progress Report   │
+└──────────┬───────────┘
+           │
+           └──────────────→ Repeat
 ```
 
 ---
 
-# 🛠️ Technology Stack
+# 📊 Progress Report Generation
 
-| Category | Technology |
+The reporting system converts the student's current state into a downloadable document.
+
+```text
+Student Profile
+      ↓
+Current Academic Data
+      ↓
+Skills + Projects + Experience
+      ↓
+Achievements
+      ↓
+Readiness Calculation
+      ↓
+Historical Progress
+      ↓
+AI-Generated Insights
+      ↓
+PDF Progress Audit
+```
+
+The report provides a point-in-time snapshot while preserving the idea of continuous progress.
+
+---
+
+# 🔐 Privacy & Security
+
+EduPath AI is designed with student privacy in mind.
+
+### Current privacy-oriented mechanisms include:
+
+- 🔒 Secure account/profile gate
+- 🔑 SHA-256 hashed passcodes
+- 👤 Isolated student JSON profiles
+- 🚫 Secrets excluded through `.gitignore`
+- 🚫 Student profiles excluded from version control
+- 🚫 Local vector databases excluded from version control
+- 🚫 Cache and generated runtime data excluded from version control
+
+### Sensitive Files
+
+The project should not commit:
+
+```text
+.env
+student_profiles/
+chroma_db/
+cache/
+secrets/
+```
+
+API keys and other secrets should be stored through environment variables or the deployment platform's secret-management system.
+
+---
+
+# 🧰 Technology Stack
+
+| Technology | Purpose |
 |---|---|
-| **Programming Language** | Python 3.10+ |
-| **Web Framework** | Streamlit |
-| **AI / LLM Engine** | Google Gemini API |
-| **Vector Database** | ChromaDB |
-| **Data Processing** | Pandas, NumPy |
-| **PDF Extraction** | PyPDF2, pdfplumber |
-| **PDF Generation** | ReportLab |
-| **Cryptographic Security** | Python `hashlib` — SHA-256 |
-| **Deployment Platform** | Streamlit Community Cloud |
-| **Version Control** | Git & GitHub |
+| **Python 3.10+** | Core application |
+| **Streamlit** | Web application and dashboard |
+| **Google Gemini API** | AI reasoning and recommendations |
+| **ChromaDB** | Vector database / RAG |
+| **Pandas** | Data processing |
+| **NumPy** | Numerical computation |
+| **PyPDF2 / pdfplumber** | PDF extraction |
+| **ReportLab** | PDF report generation |
+| **hashlib** | Passcode hashing |
+| **Git / GitHub** | Version control |
+| **Streamlit Cloud** | Deployment |
 
 ---
 
-# 📂 Repository Structure
+# 📂 Project Structure
 
 ```text
 EduPath-AI/
 │
 ├── .streamlit/
-│   ├── config.toml
-│   └── secrets.toml
+│   └── config.toml
 │
 ├── data/
-│   ├── credentials.json
-│   ├── opportunities.csv
-│   └── students/
-│       └── sample_student.json
+│   └── university/
 │
 ├── src/
 │   ├── academic_analysis.py
@@ -541,28 +587,58 @@ EduPath-AI/
 │
 ├── app.py
 ├── requirements.txt
+├── .gitignore
 ├── LICENSE
 └── README.md
 ```
 
-### Module Responsibilities
+---
 
-| File | Responsibility |
-|---|---|
-| `app.py` | Main dashboard, UI layout, and navigation |
-| `academic_analysis.py` | Transcript parsing and academic remediation |
-| `achievements.py` | Automatic milestone and achievement detection |
-| `career_analysis.py` | Career trajectory and skill-gap analysis |
-| `progress_tracker.py` | Longitudinal 100-point readiness evaluation |
-| `rag.py` | ChromaDB indexing and semantic catalog retrieval |
-| `report_generator.py` | PDF audit and portfolio generation |
-| `roadmap.py` | Adaptive four-year roadmap engine |
-| `storage.py` | Authentication and isolated student data management |
-| `utils.py` | Gemini client, retry handling, and model fallback logic |
+# 🧩 Module Responsibilities
+
+### `app.py`
+
+Main Streamlit application and user interface.
+
+### `academic_analysis.py`
+
+Handles academic performance and transcript-related analysis.
+
+### `achievements.py`
+
+Manages student achievements and milestones.
+
+### `career_analysis.py`
+
+Evaluates career-readiness information and career-related gaps.
+
+### `progress_tracker.py`
+
+Handles longitudinal progress updates and comparisons.
+
+### `rag.py`
+
+Manages retrieval-augmented generation and ChromaDB interactions.
+
+### `report_generator.py`
+
+Generates downloadable PDF reports.
+
+### `roadmap.py`
+
+Generates and manages personalized academic/career roadmaps.
+
+### `storage.py`
+
+Handles student profile and local data persistence.
+
+### `utils.py`
+
+Contains shared helper functions and utilities.
 
 ---
 
-# ⚙️ Local Installation & Setup
+# 🚀 Installation
 
 ## 1. Clone the Repository
 
@@ -573,18 +649,18 @@ cd EduPath-AI
 
 ## 2. Create a Virtual Environment
 
-### Windows — PowerShell
-
-```powershell
-python -m venv venv
-venv\Scripts\activate
-```
-
-### macOS / Linux
+### Windows
 
 ```bash
-python3 -m venv venv
-source venv/bin/activate
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+### Linux / macOS
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
 ```
 
 ## 3. Install Dependencies
@@ -593,172 +669,249 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## 4. Configure Environment Secrets
+## 4. Configure Environment Variables
 
-Create:
+Create a `.env` file or configure secrets through your deployment platform.
 
-```text
-.streamlit/secrets.toml
+Example:
+
+```env
+GOOGLE_API_KEY=your_google_gemini_api_key
 ```
 
-Add your Google Gemini API key:
+> Never commit API keys or other secrets to GitHub.
 
-```toml
-GEMINI_API_KEY = "YOUR_GEMINI_API_KEY"
-```
-
-> ⚠️ Never commit your API key to GitHub.
-
-Make sure `.streamlit/secrets.toml` is included in `.gitignore`.
-
----
-
-# ▶️ Run EduPath AI
-
-Start the Streamlit application:
+## 5. Run the Application
 
 ```bash
 streamlit run app.py
 ```
 
-The application will be available at:
-
-```text
-http://localhost:8501
-```
+The application will become available through the local Streamlit URL shown in the terminal.
 
 ---
 
-# 📊 User Workflow
+# 🔑 Google Gemini Configuration
+
+EduPath AI uses Google's Gemini API for AI-powered reasoning and recommendations.
+
+You need a valid Gemini API key.
+
+Store the key securely rather than hard-coding it inside the source code.
+
+For Streamlit deployment, configure the key through Streamlit Secrets.
+
+---
+
+# 🧭 User Workflow
 
 ```text
-1. Create or Sign In to a Secure Student Account
-                         ↓
-2. Complete Student Profile
-                         ↓
+1. Sign In
+      ↓
+2. Create / Load Student Profile
+      ↓
 3. Upload Academic Transcript
-                         ↓
-4. Upload University Course Catalog
-                         ↓
-5. Vectorize Catalog Using RAG
-                         ↓
-6. Analyze Coursework Performance
-                         ↓
-7. Identify Weak Subjects
-                         ↓
-8. Generate Targeted Remediation
-                         ↓
-9. Generate Grounded Career Recommendations
-                         ↓
-10. Generate / Adapt 4-Year Roadmap
-                         ↓
-11. Track Roadmap Progress
-                         ↓
-12. Log Skills, Projects & Experience
-                         ↓
-13. Add / Detect Achievements
-                         ↓
-14. Re-Evaluate Career Readiness
-                         ↓
-15. Compare Progress Against Baseline
-                         ↓
-16. Download PDF Progress Audit
-                         ↓
-17. Download Student Career Portfolio
+      ↓
+4. Provide University Catalog / Syllabus
+      ↓
+5. Analyze Academic Progress
+      ↓
+6. Generate Readiness Score
+      ↓
+7. Identify Skill Gaps
+      ↓
+8. Receive Remediation Recommendations
+      ↓
+9. Generate Four-Year Roadmap
+      ↓
+10. Consult AI Advisor
+      ↓
+11. Explore Opportunities
+      ↓
+12. Add Skills / Projects / Achievements
+      ↓
+13. Reevaluate Progress
+      ↓
+14. Compare Progress
+      ↓
+15. Download Progress Audit / Portfolio
 ```
 
 ---
 
-# 🔄 Continuous Student Progress Cycle
+# 📈 Example Readiness Dashboard
 
-EduPath AI is designed to be used throughout a student's degree rather than only once.
+A student's readiness profile can be represented as:
 
 ```text
-          INITIAL ANALYSIS
-                │
-                ▼
-        Day-One Baseline
-                │
-                ▼
-        Personalized Roadmap
-                │
-                ▼
-       Student Takes Action
-                │
-                ▼
-      Projects / Skills / Grades
-                │
-                ▼
-         Add Achievements
-                │
-                ▼
-       Update Progress Tracker
-                │
-                ▼
-       Recalculate Readiness
-                │
-                ▼
-       Compare With Baseline
-                │
-                ▼
-        Generate New Guidance
-                │
-                └───────────────┐
-                                │
-                                ▼
-                       Continuous Tracking
+Career Readiness
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Overall Score        74 / 100
+
+Academic             82 / 100
+Skills               70 / 100
+Projects             68 / 100
+Experience           55 / 100
 ```
 
-This allows students to repeatedly update their academic and career information as they progress through university.
+The important point is not only the score itself, but **why the score is at that level and what the student can do next**.
 
 ---
 
-# 📈 Progress Report Generation
+# 🔁 From Static Profile to Longitudinal Profile
 
-The system can generate a downloadable PDF report containing the student's current career-readiness state.
-
-A typical report can include:
+Traditional academic systems often look like:
 
 ```text
-Student Profile
-      ↓
-Academic Performance
-      ↓
-Skills Development
-      ↓
-Project Portfolio
-      ↓
-Experience
-      ↓
-Achievements
-      ↓
-Current Readiness Score
-      ↓
-Baseline Comparison
-      ↓
-Progress Delta
-      ↓
-Strategic Recommendations
+Student Data → Analysis → Result
 ```
 
-This provides students with a tangible record of how their career readiness evolves over time.
+EduPath AI extends this into:
+
+```text
+Student Data
+     ↓
+Analysis
+     ↓
+Recommendations
+     ↓
+Student Action
+     ↓
+New Skills / Projects / Achievements
+     ↓
+Updated Profile
+     ↓
+Reassessment
+     ↓
+Progress Report
+     ↓
+Next Recommendations
+```
+
+This creates a living academic and career profile rather than a static report.
 
 ---
 
-# 🔮 Future Development
+# 🏗️ Development Philosophy
+
+EduPath AI follows several design principles:
+
+### Grounded AI
+
+AI recommendations should be connected to available academic context whenever possible.
+
+### Student-Centered
+
+The system is designed around the student's current state rather than generic career advice.
+
+### Longitudinal
+
+Progress is tracked across time instead of being evaluated only once.
+
+### Explainable
+
+Readiness is divided into understandable components so students can identify improvement areas.
+
+### Privacy-Aware
+
+Student data and application secrets should be isolated from public source control.
+
+### Action-Oriented
+
+Recommendations should lead toward concrete actions such as learning, building, applying, or achieving.
+
+---
+
+# 🧪 Example Student Journey
+
+Consider a student beginning with:
+
+```text
+Academic Readiness: 75
+Skills:             52
+Projects:           40
+Experience:         20
+```
+
+The system may identify:
+
+```text
+Primary Gaps:
+- Practical ML projects
+- Industry experience
+- Portfolio development
+```
+
+The roadmap can then prioritize:
+
+```text
+1. Complete an ML project
+2. Deploy the project
+3. Document the project
+4. Add the project to the profile
+5. Apply for relevant internships
+```
+
+After the student updates their profile:
+
+```text
+New Project
+      +
+Deployment
+      +
+Internship
+      +
+Certification
+      ↓
+Updated Readiness
+```
+
+The system can reassess the student's current position and provide the next recommendations.
+
+---
+
+# 🌱 Future Development
 
 Potential future improvements include:
 
 - 📊 Advanced progress analytics
-- 📈 Semester-by-semester readiness charts
-- 🏆 Expanded achievement and badge systems
-- 🎯 More sophisticated career matching
-- 🔎 Automated opportunity verification
-- 🧠 Improved multi-model AI orchestration
-- 📚 Support for multiple university catalogs
-- 📱 Mobile-friendly student dashboard
-- 🔔 Personalized deadline and opportunity alerts
-- 📄 Enhanced professional portfolio exports
+- 📅 Semester-by-semester planning
+- 📈 Historical readiness charts
+- 🎯 More granular career-role matching
+- 🧠 Advanced multi-agent career advising
+- 🔍 Improved opportunity verification
+- 🧾 Enhanced portfolio generation
+- 🔔 Progress reminders
+- 📱 Mobile-friendly experience
+- 🏫 Support for additional universities
+- 📚 Larger academic knowledge bases
+- 🔐 More advanced privacy and authentication controls
+
+---
+
+# 🌐 Live Demo
+
+Try the deployed application:
+
+**[🚀 EduPath AI — Live Demo](https://edupath-ai-companion.streamlit.app/)**
+
+---
+
+# 👥 Team & Contributions
+
+| Team Member | Role & Contributions |
+|---|---|
+| **Muhammad Shakeel Rasheed** | **Co-Lead Developer & AI Engineer** — Project ideation, system architecture, core development, AI/RAG implementation, readiness engine, progress tracking, roadmap, and overall project development |
+| **Muhammad Rafay** | **Co-Lead Developer & AI Engineer** — Contributed to project ideation, system design, core development, AI functionality, implementation, and overall project development |
+| **Muhammad Abdullah** | **Project & Presentation Contributor** — Contributed to the project and prepared the presentation |
+| **Malik Muhammad Anees** | **Project & Media Contributor** — Contributed to the project and created the project demonstration video |
+
+### Team Links
+
+- **Muhammad Shakeel Rasheed** — [GitHub](https://github.com/mshakeelrasheed) · [LinkedIn](https://www.linkedin.com/in/muhammad-shakeel-rasheed/)
+- **Muhammad Rafay** — [LinkedIn](https://www.linkedin.com/in/muhammad-rafay-itsrafay03/)
+- **Muhammad Abdullah** — LinkedIn not provided
+- **Malik Muhammad Anees** — LinkedIn not provided
 
 ---
 
@@ -766,37 +919,27 @@ Potential future improvements include:
 
 ### Muhammad Shakeel Rasheed
 
-**Lead Developer & AI Engineer**
+**Co-Lead Developer & AI Engineer**  
+BS Artificial Intelligence — The Islamia University of Bahawalpur
 
-🎓 **BS Artificial Intelligence**  
-The Islamia University of Bahawalpur
-
-### Profiles
-
-- **GitHub:** [@mshakeelrasheed](https://github.com/mshakeelrasheed)
-- **LinkedIn:** [muhammad-shakeel-rasheed](https://www.linkedin.com/in/muhammad-shakeel-rasheed/)
-- **Hugging Face:** [@mshakeelrasheed](https://huggingface.co/mshakeelrasheed)
+- GitHub: [@mshakeelrasheed](https://github.com/mshakeelrasheed)
+- LinkedIn: [Muhammad Shakeel Rasheed](https://www.linkedin.com/in/muhammad-shakeel-rasheed/)
+- Hugging Face: [@mshakeelrasheed](https://huggingface.co/mshakeelrasheed)
 
 ---
 
-# 📜 License
+# 📄 License
 
 This project is licensed under the **MIT License**.
 
-See the [`LICENSE`](LICENSE) file for more information.
+See the [LICENSE](LICENSE) file for details.
 
 ---
 
-<div align="center">
+<p align="center">
 
-# 🎓 EduPath AI
+### 🎓 EduPath AI
 
-### Guiding students from enrollment to career readiness with grounded intelligence.
+**Analyze your journey. Track your progress. Build your future.**
 
-**Built with Python • Streamlit • Google Gemini • ChromaDB • ReportLab**
-
-<br>
-
-⭐ **If you find EduPath AI helpful, consider starring the repository.**
-
-</div>
+</p>
